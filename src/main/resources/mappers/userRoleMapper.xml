@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.car.dao.SysUserRoleMapper">
+    <resultMap id="aMap" type="com.example.car.entity.SysUserRole">
+        <id column="user_id" property="userId"/>
+        <result column="role_id" property="roleId"/>
+    </resultMap>
+    <select id="listByUserId" parameterType="int" resultType="com.example.car.entity.SysUserRole">
+        SELECT user_id AS userId,role_id AS roleId FROM sys_user_role WHERE user_id = #{userId};
+    </select>
+
+</mapper>
